@@ -1,4 +1,4 @@
-# QMSum RAG QA with LLaMA-3 & BGE Embeddings
+# 期末專案報告
 
 本專案使用 Retrieval-Augmented Generation（RAG）技術實作一個問答系統，基於 QMSum 會議摘要資料集，結合 Sentence-BERT 向量檢索與 Meta LLaMA-3-8B-Instruct 語言模型生成答案，並支援 Fallback 策略以應對回答失效情況，最後以多種評估指標分析效果。
 
@@ -41,7 +41,7 @@ graph TD
 | 使用 fallback   | 20.59 | 28.23         | 6.45          | 18.20         | 84.96          | -3.78     |
 | 全部             | 21.76 | 28.75         | 7.13          | 18.91         | 85.58          | -3.77     |
 
-> **觀察：** Fallback 雖能補足部分失敗案例，但平均品質略低於原本 Top-K 片段所生成結果。
+> **觀察：** Fallback 雖能補足部分失敗案例，但平均品質略低於原本 Top-K 片段所生成結果。經過比對，原因為這些問題是針對整個會議的內容進行QFS的摘要，問題是比較攏統的"Summarize the whole meeting."會使得容易觸發fallback。
 
 ---
 
